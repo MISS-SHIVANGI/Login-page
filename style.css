@@ -1,0 +1,256 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins' ,sans-serif;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #23242a;
+}
+  
+/* CSS for the columns */
+.column {
+    float: left;
+    width: 50%;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+.box{
+    position: relative;
+    width: 380px;
+    height: 360px;
+    background:#1c1c1c;
+    border-radius: 8px; 
+    overflow: hidden; 
+    margin-top: 12px;
+    margin-bottom: 12px;
+}  
+.container
+{
+    border: 4px solid rgb(29, 141, 206); 
+    width: 60%; 
+    height: 80%;
+    background-color: rgb(214, 227, 238); 
+   
+    /* box-shadow: rgb(18, 177, 213) 0px 20px 30px -10px; */
+    box-shadow:rgb(129, 162, 169)0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+} 
+.box::before{
+     content: ' ';
+     position: absolute;
+     top: -50%;
+     left: -50%;
+     width: 380px;
+     height: 420px; 
+     background-color: rgb(48, 204, 202);
+     background: linear-gradient(0deg ,transparent ,transparent #45f3ff, #45f3ff, #45f3ff); 
+     z-index: 1; 
+     transform-origin: bottom right;
+     animation: animate 5s linear infinite;
+}  
+.box::after{
+    content: ' ';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 380px;
+    height: 420px; 
+    background-color: rgb(48, 204, 202);
+    background: linear-gradient(0deg ,transparent ,transparent #45f3ff, #45f3ff, #45f3ff); 
+    z-index: 1; 
+    transform-origin: bottom right;
+    animation: animate 5s linear infinite; 
+    animation-delay: -3s;
+}  
+.borderline{
+    position: absolute;
+    top: 0;
+    inset: 0;
+    background-color: #ff2770;
+} 
+.borderline::before{
+    content: ' ';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 380px;
+    height: 420px; 
+    background-color:  #ff2770,;
+    background: linear-gradient(0deg ,transparent ,transparent #ff2770, #ff2770, #ff2770); 
+    z-index: 1; 
+    transform-origin: bottom right;
+    animation: animate 5s linear infinite; 
+    animation-delay: -1.5s;
+} 
+
+@keyframes animate{
+    0%{
+        transform: rotate(0deg);
+    }  
+
+   
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+.box form{ 
+    position: absolute;
+    inset: 4px;
+    background: #222;
+    padding: 50px 40px;
+
+    border-radius: 8px;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;  
+}
+
+.box form h2{
+    color: #fff;
+    font-weight: 200;
+    /* text-align: center; */
+    letter-spacing: 0.1px; 
+    margin-left: 80px;
+    margin-left: 77px;
+    margin-right: -52px;
+} 
+
+.box form .inputBox{
+    position: relative;
+    width: 300px;
+    margin-top: 35px;
+
+}  
+.box form .inputBox input{
+    position: relative;
+    width:100%;
+    padding: 20px 10px 10px;
+}
+
+.box form .inputBox input{
+    position: relative;
+    width: 100%;
+    padding: 20px 10px 10px;
+    background: transparent;
+    outline: none;
+    border: none;
+    box-shadow: none;
+    columns: #232422;
+    font-size: 1em;
+    letter-spacing: 0.5em;
+    transition: 0.5s;
+    z-index: 10;
+
+} 
+
+.box form .inputBox span{
+    position: absolute;
+    left: 0;
+    padding: 20px 20px 10px;
+    pointer-events: none;
+    color: #8f8f8f;
+    font-size: 1em; 
+    letter-spacing: 0.05em;
+    transition: 0.5s; 
+
+}  
+.box form .inputBox input:valid~span,
+.box form .inputBox input:focus~span
+{
+
+    color: #fff; 
+    font-size: 0.75em;
+    transform: translateY(-34px);
+
+
+}    
+.box form .links a{
+    margin: 10px 0;
+    font-size: 0.75em;
+    color: #8f8f8f;
+    text-decoration: none;
+}  
+.box form  .links a:hover ,
+.box form .links a:nth-child(2)
+{
+    color: #ffffff;
+
+}
+
+.box form .inputBox i
+{  
+
+    position: absolute;
+    left:0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: #fff;
+    border-radius: 4px;
+    overflow: hidden;
+    transform: 0.5s;
+    pointer-events: none; 
+    background-color: white;
+
+
+}  
+
+.box form .links{
+     
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+
+}
+
+.box form .links a{
+     
+  margin: 10px 0;
+  font-size: 0.75em;
+  color: #dfd1d1; 
+  text-decoration: none;
+    
+}  
+.box form .links a:hover,
+.box form .links a:nth-child(2)
+{
+ color: #ffffff;
+
+}  
+
+.box form input[type="submit"]
+{
+     border: none;
+     outline: none;
+     padding: 9px 25px;
+     background: #e4dfdf;
+     cursor: pointer;
+     font-size: 0.9em;
+     border-radius: 4px;
+     font-weight: 600;
+     width: 100px; 
+     margin-top: 10px;
+} 
+.box form input[type="submit"]:active
+{  
+   opacity: 0.8;
+}
+
+.box form input[type="submit"]:hover
+{  
+    background-color: rgb(27, 189, 189);
+    box-shadow: 2px 10px 5px;
+}
